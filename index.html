@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3PM LLC | Property Maintenance & Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #9B0B22;
+    --black: #0A0A0A;
+    --charcoal: #1A1A1A;
+    --steel: #2A2A2A;
+    --white: #F5F5F5;
+    --white-pure: #FFFFFF;
+    --gray: #888;
+    --gray-light: #CCCCCC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px;
+    height: 70px;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--red);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .logo-mark {
+    width: 48px; height: 48px;
+    position: relative;
+  }
+  .logo-svg { width: 100%; height: 100%; }
+  .nav-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: var(--white-pure);
+    line-height: 1;
+  }
+  .nav-brand span { color: var(--red); }
+  .nav-links {
+    display: flex; gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--red); }
+  .nav-cta {
+    background: var(--red);
+    color: var(--white-pure) !important;
+    padding: 8px 20px;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--red-dark) !important; color: var(--white-pure) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 40px; height: 2px;
+    background: var(--red);
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: 2px;
+    color: var(--white-pure);
+    margin-bottom: 12px;
+  }
+  .hero-title .accent { color: var(--red); }
+  .hero-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 32px;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--gray-light);
+    max-width: 420px;
+    margin-bottom: 48px;
+  }
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 48px;
+  }
+  .badge {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--steel);
+    color: var(--gray);
+  }
+  .badge.highlight {
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    background: var(--red);
+    color: var(--white-pure);
+    border: none; cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+  .btn-outline {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    background: transparent;
+    color: var(--white);
+    border: 1px solid var(--steel);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--white); color: var(--white-pure); }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    gap: 3px;
+  }
+  .hero-photo {
+    overflow: hidden;
+    position: relative;
+  }
+  .hero-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(0.75);
+  }
+  .hero-photo:hover img { transform: scale(1.05); filter: brightness(0.9); }
+  .hero-photo.span2 { grid-column: span 2; }
+  .hero-photo-label {
+    position: absolute; bottom: 0; left: 0;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: rgba(200,16,46,0.85);
+    padding: 4px 10px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--red);
+    padding: 28px 80px;
+    display: flex; justify-content: space-around; align-items: center;
+    flex-wrap: wrap; gap: 20px;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--white-pure);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 4px;
+  }
+  .stat-divider {
+    width: 1px; height: 50px;
+    background: rgba(255,255,255,0.25);
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section { padding: 100px 80px; }
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: ''; display: block;
+    width: 30px; height: 2px; background: var(--red);
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3.8rem);
+    line-height: 1;
+    color: var(--white-pure);
+    margin-bottom: 16px;
+  }
+  .section-title .accent { color: var(--red); }
+
+  /* ── SERVICES ── */
+  .services-section { background: var(--charcoal); }
+  .services-intro {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; margin-bottom: 60px;
+    align-items: end;
+  }
+  .services-desc {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--gray-light);
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2px;
+  }
+  .service-card {
+    background: var(--steel);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: default;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 0; height: 3px;
+    background: var(--red);
+    transition: width 0.4s ease;
+  }
+  .service-card:hover { background: #333; }
+  .service-card:hover::before { width: 100%; }
+  .service-icon {
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .service-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white-pure);
+    margin-bottom: 10px;
+  }
+  .service-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--gray);
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio-section { background: var(--black); }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 4px;
+    margin-top: 60px;
+  }
+  .port-item {
+    position: relative; overflow: hidden;
+    aspect-ratio: 4/3;
+  }
+  .port-item.tall { aspect-ratio: 3/4; grid-row: span 2; }
+  .port-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.7);
+  }
+  .port-item:hover img { transform: scale(1.06); filter: brightness(0.5); }
+  .port-overlay {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: flex-end;
+    padding: 24px;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .port-item:hover .port-overlay { opacity: 1; }
+  .port-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+  .port-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--white-pure);
+  }
+
+  /* ── REVIEWS ── */
+  .reviews-section { background: var(--charcoal); }
+  .reviews-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 60px; flex-wrap: wrap; gap: 20px;
+  }
+  .rating-block {
+    text-align: right;
+  }
+  .rating-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--red);
+    line-height: 1;
+  }
+  .stars { color: #FFB800; font-size: 1.2rem; letter-spacing: 2px; }
+  .rating-sub {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-top: 4px;
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2px;
+  }
+  .review-card {
+    background: var(--steel);
+    padding: 32px;
+    position: relative;
+  }
+  .review-stars { color: #FFB800; font-size: 0.9rem; margin-bottom: 16px; }
+  .review-text {
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--gray-light);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .review-text::before { content: '"'; color: var(--red); font-size: 1.5rem; font-style: normal; }
+  .review-author {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+  .review-work {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-top: 2px;
+  }
+  .review-quote-mark {
+    position: absolute; top: 20px; right: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--red);
+    opacity: 0.1;
+    line-height: 1;
+  }
+
+  /* ── PAYMENT ── */
+  .payment-section {
+    background: var(--black);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .payment-left {
+    padding: 100px 80px;
+    background: var(--charcoal);
+  }
+  .payment-right {
+    padding: 100px 80px;
+    background: var(--steel);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .payment-form {
+    display: flex; flex-direction: column; gap: 16px;
+    margin-top: 40px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .form-input {
+    background: var(--black);
+    border: 1px solid var(--steel);
+    color: var(--white);
+    padding: 12px 16px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: var(--red); }
+  .form-input::placeholder { color: var(--gray); }
+  select.form-input { cursor: pointer; }
+  .square-placeholder {
+    background: var(--black);
+    border: 1px solid var(--steel);
+    padding: 20px;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .square-placeholder-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .square-mock-card {
+    background: var(--charcoal);
+    border: 1px dashed #444;
+    padding: 16px;
+    color: var(--gray);
+    font-size: 0.85rem;
+    font-style: italic;
+  }
+  .square-badge {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-top: 12px;
+  }
+  .square-badge-icon {
+    background: #000;
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    padding: 3px 8px;
+    letter-spacing: 1px;
+  }
+  .square-badge-text {
+    font-size: 0.75rem; color: var(--gray);
+  }
+  .payment-info-list {
+    list-style: none;
+    margin-top: 32px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .payment-info-list li {
+    display: flex; align-items: flex-start; gap: 12px;
+    font-size: 0.9rem; font-weight: 300; color: var(--gray-light); line-height: 1.5;
+  }
+  .payment-info-list li::before {
+    content: '▶';
+    color: var(--red);
+    font-size: 0.6rem;
+    margin-top: 5px;
+    flex-shrink: 0;
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--red);
+    padding: 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 40px;
+  }
+  .contact-left .section-title { color: var(--white-pure); }
+  .contact-left p {
+    font-size: 1rem; font-weight: 300;
+    color: rgba(255,255,255,0.8);
+    margin-top: 12px;
+  }
+  .contact-details { display: flex; flex-direction: column; gap: 20px; }
+  .contact-item {
+    display: flex; align-items: center; gap: 16px;
+  }
+  .contact-icon {
+    width: 48px; height: 48px;
+    background: rgba(0,0,0,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .contact-text {
+    font-family: 'Barlow Condensed', sans-serif;
+  }
+  .contact-text-label {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+  .contact-text-value {
+    font-size: 1.1rem; font-weight: 600;
+    color: var(--white-pure);
+    text-decoration: none;
+  }
+  a.contact-text-value:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 2px solid var(--red);
+    padding: 32px 80px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem; letter-spacing: 3px;
+    color: var(--white);
+  }
+  .footer-brand span { color: var(--red); }
+  .footer-copy {
+    font-size: 0.8rem; color: var(--gray);
+    font-weight: 300;
+  }
+  .footer-highlights {
+    display: flex; gap: 20px; flex-wrap: wrap;
+  }
+  .footer-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gray);
+    border: 1px solid var(--steel);
+    padding: 4px 10px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title   { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub     { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-desc    { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-badges  { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.5s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { height: 50vw; }
+    .hero-left { padding: 60px 32px; }
+    .section { padding: 70px 32px; }
+    .services-intro { grid-template-columns: 1fr; gap: 20px; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .port-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
+    .payment-section { grid-template-columns: 1fr; }
+    .payment-left, .payment-right { padding: 60px 32px; }
+    .contact-section { padding: 60px 32px; flex-direction: column; }
+    footer { flex-direction: column; align-items: flex-start; padding: 32px; }
+    .stats-bar { padding: 28px 32px; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="logo-mark">
+      <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="2" y="30" font-family="Bebas Neue, sans-serif" font-size="26" fill="#C8102E">3</text>
+        <polygon points="18,28 28,14 38,28" fill="none" stroke="#F5F5F5" stroke-width="2.5"/>
+        <line x1="14" y1="28" x2="42" y2="28" stroke="#F5F5F5" stroke-width="2.5"/>
+        <line x1="34" y1="20" x2="38" y2="20" stroke="#C8102E" stroke-width="3"/>
+        <line x1="36" y1="18" x2="40" y2="18" stroke="#C8102E" stroke-width="3"/>
+        <line x1="38" y1="16" x2="42" y2="16" stroke="#C8102E" stroke-width="3"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-brand"><span>3PM</span> LLC</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#pay" class="nav-cta">Pay Invoice</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Milford, Delaware · Est. 12 Years</div>
+    <h1 class="hero-title">
+      BUILT<br>
+      <span class="accent">RIGHT.</span><br>
+      EVERY<br>TIME.
+    </h1>
+    <div class="hero-sub">Property Maintenance & Management · Contracted Services</div>
+    <p class="hero-desc">
+      From ground-up framing to finish work, 3PM LLC delivers quality craftsmanship across Delaware. Veteran-owned. Family-operated. 12 consecutive years of 5-star results.
+    </p>
+    <div class="hero-badges">
+      <span class="badge highlight">Veteran-Owned</span>
+      <span class="badge highlight">Minority-Owned</span>
+      <span class="badge">Family-Operated</span>
+      <span class="badge">24/7 Emergency</span>
+      <span class="badge">Free Estimates</span>
+      <span class="badge">Licensed & Insured</span>
+    </div>
+    <div class="hero-actions">
+      <a href="tel:3024841659" class="btn-primary">Call Now · 302.484.1659</a>
+      <a href="#portfolio" class="btn-outline">View Our Work</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-grid">
+      <div class="hero-photo">
+        <img src="images/clp_6567b5a4a1b7f.jpeg" alt="Kitchen remodel">
+        <span class="hero-photo-label">Kitchen Remodel</span>
+      </div>
+      <div class="hero-photo">
+        <img src="images/clp_672ea3ad6b941.jpeg" alt="Composite deck">
+        <span class="hero-photo-label">Composite Decking</span>
+      </div>
+      <div class="hero-photo">
+        <img src="images/clp_6567b50c1a2e0.jpeg" alt="Bathroom tile">
+        <span class="hero-photo-label">Bath Renovation</span>
+      </div>
+      <div class="hero-photo">
+        <img src="images/clp_6568ab3daeeca.jpeg" alt="New construction framing">
+        <span class="hero-photo-label">New Construction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">12</div>
+    <div class="stat-label">Years in Business</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-num">5.0</div>
+    <div class="stat-label">Star Rating</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-num">12</div>
+    <div class="stat-label">Verified Reviews</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-num">24/7</div>
+    <div class="stat-label">Emergency Service</div>
+  </div>
+  <div class="stat-divider"></div>
+  <div class="stat">
+    <div class="stat-num">100%</div>
+    <div class="stat-label">Satisfaction Guaranteed</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-section" id="services">
+  <div class="services-intro">
+    <div>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">FULL-SCOPE<br><span class="accent">SERVICES</span></h2>
+    </div>
+    <p class="services-desc">
+      3PM LLC handles every phase — from raw concrete foundations to finish carpentry, tile work, and landscaping. One contractor. Complete solutions. No subcontractor runaround.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🏗️</span>
+      <div class="service-name">New Construction & Framing</div>
+      <p class="service-desc">Ground-up builds from foundation to roof. Structural framing, concrete work, and masonry.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏠</span>
+      <div class="service-name">Home Remodeling</div>
+      <p class="service-desc">Full interior renovations, additions, and space transformations done with precision.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🍳</span>
+      <div class="service-name">Kitchen Renovation</div>
+      <p class="service-desc">Cabinets, countertops, tile backsplash, flooring, and full kitchen overhauls.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🚿</span>
+      <div class="service-name">Bathroom Remodeling</div>
+      <p class="service-desc">Tile work, vanities, shower systems, and complete bathroom transformations.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🪵</span>
+      <div class="service-name">Decks & Porches</div>
+      <p class="service-desc">Pressure-treated and composite deck builds with custom railings and lighting.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎨</span>
+      <div class="service-name">Painting & Drywall</div>
+      <p class="service-desc">Interior and exterior painting, drywall installation, texture, and finishing.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🌿</span>
+      <div class="service-name">Landscaping</div>
+      <p class="service-desc">Lawn care, grading, drainage, and outdoor property improvements.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚡</span>
+      <div class="service-name">Handyman & Emergency</div>
+      <p class="service-desc">24/7 emergency response. No job too small — grab bars, repairs, quick fixes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio-section" id="portfolio">
+  <div class="section-label">Our Work</div>
+  <h2 class="section-title">THE <span class="accent">PORTFOLIO</span></h2>
+  <div class="portfolio-grid">
+    <div class="port-item tall">
+      <img src="images/clp_6567b5a4a1b7f.jpeg" alt="Kitchen remodel with stone backsplash">
+      <div class="port-overlay">
+        <div class="port-tag">Kitchen</div>
+        <div class="port-title">Full Kitchen Renovation</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_6568adffbd928.jpeg" alt="Interior staircase remodel">
+      <div class="port-overlay">
+        <div class="port-tag">Interior</div>
+        <div class="port-title">Staircase & Flooring</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_672ea3ad6b941.jpeg" alt="Composite deck">
+      <div class="port-overlay">
+        <div class="port-tag">Decking</div>
+        <div class="port-title">Composite Deck Build</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_6567b50c1a2e0.jpeg" alt="Tile bathroom">
+      <div class="port-overlay">
+        <div class="port-tag">Bathroom</div>
+        <div class="port-title">Tile Shower Renovation</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_6568ae0fc6cad.jpeg" alt="Modern kitchen">
+      <div class="port-overlay">
+        <div class="port-tag">Kitchen</div>
+        <div class="port-title">White Kitchen Remodel</div>
+      </div>
+    </div>
+    <div class="port-item tall">
+      <img src="images/clp_6568ab3daeeca.jpeg" alt="New construction framing">
+      <div class="port-overlay">
+        <div class="port-tag">Construction</div>
+        <div class="port-title">New Home Framing</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_67fbf576dd8f1.jpeg" alt="Bathroom tile work">
+      <div class="port-overlay">
+        <div class="port-tag">Bathroom</div>
+        <div class="port-title">Tile & Bath Renovation</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_6567b4e3869a6.jpeg" alt="Deck with lights at night">
+      <div class="port-overlay">
+        <div class="port-tag">Decking</div>
+        <div class="port-title">Lighted Deck Build</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_6568abd710870.jpeg" alt="Foundation work">
+      <div class="port-overlay">
+        <div class="port-tag">Foundation</div>
+        <div class="port-title">Block Foundation</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <img src="images/clp_66bd502f1b492.jpeg" alt="Concrete slab">
+      <div class="port-overlay">
+        <div class="port-tag">Concrete</div>
+        <div class="port-title">Concrete Patio Slab</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section" id="reviews">
+  <div class="reviews-header">
+    <div>
+      <div class="section-label">Client Feedback</div>
+      <h2 class="section-title">WHAT THEY <span class="accent">SAY</span></h2>
+    </div>
+    <div class="rating-block">
+      <div class="rating-num">5.0</div>
+      <div class="stars">★★★★★</div>
+      <div class="rating-sub">12 Verified Reviews · Networx</div>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Mr. Parker and his team have been very professional with every job. Completed in the time frame given and work is superb. You will not be disappointed.</p>
+      <div class="review-author">Christina — Georgetown, DE</div>
+      <div class="review-work">Remodeling, Moving, Landscaping</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">He did a phenomenal job and was able to do what needed to be done in my house ASAP. I would give 10 stars if I could.</p>
+      <div class="review-author">Cecilia — Milford, DE</div>
+      <div class="review-work">Emergency Assistance</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Very professional, great quality of work and always a positive attitude. Willing to adjust to customer needs. Would use 3PM always and recommend to all.</p>
+      <div class="review-author">Andre — Smyrna, DE</div>
+      <div class="review-work">Deck & Home Improvements</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">On time, courteous, professional and did exactly what I expected. I highly recommend him!</p>
+      <div class="review-author">Susan — Georgetown, DE</div>
+      <div class="review-work">Grab Bar Installation</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Very professional and exceptional work! Paneling removal and painting done perfectly.</p>
+      <div class="review-author">Darlene — Seaford, DE</div>
+      <div class="review-work">Drywall, Paint & Remodel</div>
+    </div>
+    <div class="review-card">
+      <div class="review-quote-mark">"</div>
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Great people to work with. Everything done in a timely manner, perfect. Definitely would use again.</p>
+      <div class="review-author">Jennifer — Greenwood, DE</div>
+      <div class="review-work">Repairs & Landscaping</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section" id="pay">
+  <div class="payment-left">
+    <div class="section-label">Secure Online Payment</div>
+    <h2 class="section-title">PAY YOUR <span class="accent">INVOICE</span></h2>
+    <p style="font-size:0.95rem; font-weight:300; line-height:1.8; color:var(--gray-light); margin-top:16px;">
+      Settle your balance quickly and securely using any major credit or debit card. Powered by Square — trusted by millions of businesses.
+    </p>
+    <ul class="payment-info-list">
+      <li>All major cards accepted — Visa, Mastercard, Amex, Discover</li>
+      <li>Payments processed securely via Square</li>
+      <li>Receipt sent automatically to your email</li>
+      <li>Questions? Call us at 302.484.1659</li>
+    </ul>
+  </div>
+  <div class="payment-right">
+    <div class="section-label">Invoice Details</div>
+    <div class="payment-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input class="form-input" type="text" placeholder="John">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input class="form-input" type="text" placeholder="Smith">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input class="form-input" type="email" placeholder="john@example.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Invoice Number</label>
+          <input class="form-input" type="text" placeholder="INV-0001">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Amount</label>
+          <input class="form-input" type="text" placeholder="$0.00">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service Type</label>
+        <select class="form-input">
+          <option value="">Select a service...</option>
+          <option>Remodeling</option>
+          <option>Decking</option>
+          <option>Kitchen / Bathroom</option>
+          <option>New Construction</option>
+          <option>Landscaping</option>
+          <option>Handyman / Repairs</option>
+          <option>Emergency Service</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="square-placeholder">
+        <div class="square-placeholder-label">Card Payment — Powered by Square</div>
+        <div class="square-mock-card">Square Web Payments SDK loads here</div>
+        <div class="square-badge">
+          <span class="square-badge-icon">■ Square</span>
+          <span class="square-badge-text">256-bit encrypted · PCI compliant</span>
+        </div>
+      </div>
+      <button class="btn-primary" style="margin-top:8px; text-align:center;">Submit Payment</button>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-left">
+    <div class="section-label" style="color:rgba(255,255,255,0.6);">Get In Touch</div>
+    <h2 class="section-title">FREE <span style="color:rgba(255,255,255,0.4);">ESTIMATE.</span><br>ZERO PRESSURE.</h2>
+    <p>We'll come out, assess the job, and give you a straight number. No surprises. No games.</p>
+  </div>
+  <div class="contact-details">
+    <div class="contact-item">
+      <div class="contact-icon">📞</div>
+      <div class="contact-text">
+        <div class="contact-text-label">Call or Text</div>
+        <a href="tel:3024841659" class="contact-text-value">302.484.1659</a>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">📍</div>
+      <div class="contact-text">
+        <div class="contact-text-label">Service Area</div>
+        <span class="contact-text-value">Milford, DE & Surrounding Areas</span>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">🕐</div>
+      <div class="contact-text">
+        <div class="contact-text-label">Availability</div>
+        <span class="contact-text-value">24/7 Emergency Response</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand"><span>3PM</span> LLC</div>
+  <div class="footer-highlights">
+    <span class="footer-tag">Veteran-Owned</span>
+    <span class="footer-tag">Minority-Owned</span>
+    <span class="footer-tag">Family-Operated</span>
+    <span class="footer-tag">Delaware</span>
+  </div>
+  <div class="footer-copy">© 2026 3PM LLC · All Rights Reserved · Built by VAALOKTEC Systems™</div>
+</footer>
+
+</body>
+</html>
