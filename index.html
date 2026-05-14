@@ -629,11 +629,13 @@
     .services-intro { grid-template-columns: 1fr; gap: 20px; }
     .portfolio-grid { grid-template-columns: 1fr 1fr; }
     .port-item.tall { grid-row: span 1; aspect-ratio: 4/3; }
-    .payment-section { grid-template-columns: 1fr; }
-    .payment-left, .payment-right { padding: 60px 32px; }
-    .contact-section { padding: 60px 32px; flex-direction: column; }
-    footer { flex-direction: column; align-items: flex-start; padding: 32px; }
-    .stats-bar { padding: 28px 32px; }
+    .payment-section { grid-template-columns: 1fr; width: 100%; overflow: hidden; }
+    .payment-left, .payment-right { padding: 60px 24px; width: 100%; box-sizing: border-box; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-section { padding: 60px 24px; flex-direction: column; }
+    footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; gap: 20px; }
+    .footer-highlights { flex-direction: column; gap: 10px; }
+    .stats-bar { padding: 28px 24px; }
     .nav-links { display: none; }
   }
 </style>
@@ -644,13 +646,13 @@
 <nav>
   <div class="nav-logo">
     <div class="logo-mark">
-      <svg class="logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="30" font-family="Bebas Neue, sans-serif" font-size="26" fill="#C8102E">3</text>
-        <polygon points="18,28 28,14 38,28" fill="none" stroke="#F5F5F5" stroke-width="2.5"/>
-        <line x1="14" y1="28" x2="42" y2="28" stroke="#F5F5F5" stroke-width="2.5"/>
-        <line x1="34" y1="20" x2="38" y2="20" stroke="#C8102E" stroke-width="3"/>
-        <line x1="36" y1="18" x2="40" y2="18" stroke="#C8102E" stroke-width="3"/>
-        <line x1="38" y1="16" x2="42" y2="16" stroke="#C8102E" stroke-width="3"/>
+      <svg class="logo-svg" viewBox="0 0 56 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="1" y="32" font-family="Arial Black, sans-serif" font-size="28" font-weight="900" fill="#C8102E">3</text>
+        <polyline points="18,36 28,18 38,36" fill="none" stroke="#F5F5F5" stroke-width="2.5" stroke-linejoin="round"/>
+        <line x1="14" y1="36" x2="42" y2="36" stroke="#F5F5F5" stroke-width="2.5"/>
+        <line x1="36" y1="22" x2="43" y2="22" stroke="#C8102E" stroke-width="2.5"/>
+        <line x1="36" y1="26" x2="43" y2="26" stroke="#C8102E" stroke-width="2.5"/>
+        <line x1="36" y1="30" x2="43" y2="30" stroke="#C8102E" stroke-width="2.5"/>
       </svg>
     </div>
     <div>
